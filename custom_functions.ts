@@ -1,6 +1,6 @@
-//% color=190 weight=100 block="CodeCosmos"
+//% color=190 weight=100 block="CodeCosmos" icon="\uf71e"
 namespace CodeCosmos {
-    //% block="nieuwe blok" weight=100
+    //% block="nieuwe blok" weight=100 
     export function dropBlock() {
         const block = randint(0, 1) ? DIAMOND_BLOCK : GOLD_BLOCK;
         blocks.place(block, world(2557, 75, 27))
