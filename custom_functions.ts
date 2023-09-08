@@ -12,11 +12,12 @@ namespace CodeCosmos {
 
     //% block="nieuwe blok 2" weight=100 
     export function dropBlockLevel2() {
+        let block
         switch (randint(0, 3)) {
-            case 0: randomBlock = Plastic.blue; break;
-            case 1: randomBlock = Plastic.red; break;
-            case 2: randomBlock = Plastic.green; break;
-            case 3: randomBlock = Plastic.orange; break;
+            case 0: randomBlock = Plastic.blue; block = GOLD_BLOCK; break;
+            case 1: randomBlock = Plastic.red; block = DIAMOND_BLOCK; break;
+            case 2: randomBlock = Plastic.green; IRON_BLOCK; break;
+            case 3: randomBlock = Plastic.orange; REDSTONE_BLOCK; break;
         }
         blocks.place(randomBlock, world(2557, 75, 27))
         player.execute(
