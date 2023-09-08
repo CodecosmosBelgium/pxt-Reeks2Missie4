@@ -1,9 +1,9 @@
-//% color=190 weight=100 block="CodeCosmos" icon="\uf71e"
+//% color=190 weight=100 block="CodeCosmos"
 namespace CodeCosmos {
     //% block="nieuwe blok" weight=100 
     export function dropBlock() {
-        const block = randint(0, 1) ? DIAMOND_BLOCK : GOLD_BLOCK;
-        blocks.place(block, world(2557, 75, 27))
+        randomBlock = randint(0, 1) ? Plastic.blue : Plastic.red;
+        blocks.place(randomBlock === Plastic.red ? DIAMOND_BLOCK : GOLD_BLOCK, world(2557, 75, 27))
         player.execute(
             "/function drop_block"
         )
@@ -42,5 +42,18 @@ namespace CodeCosmos {
             agent.move(FORWARD, 1)
             loops.pause(300)
         }
-    }   
+    }
+
+    //% block="detecteer $block"
+    export function detectBlock(block: Plastic = Plastic.blue) {
+        return randomBlock === block;
+    }
+
+}
+
+enum Plastic {
+    //% block="blauwe plastic"
+    blue,
+    //% block="rode plastic"
+    red,
 }
