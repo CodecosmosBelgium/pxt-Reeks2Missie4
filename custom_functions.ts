@@ -28,14 +28,13 @@ namespace CodeCosmos {
 
     //% block="agent verplaats blok $direction" color="#D83B01" weight=100
     export function moveBlock(direction: FourDirection) {
-        let compassDirection
         switch(direction) {
-            case FourDirection.Forward: compassDirection = WEST; break;
-            case FourDirection.Back: compassDirection = EAST; break;
-            case FourDirection.Left: compassDirection = NORTH; break;
-            case FourDirection.Forward: compassDirection = SOUTH; break;
+            case FourDirection.Forward: agent.teleport(world(2558, 69, 27), WEST); break;
+            case FourDirection.Back: agent.teleport(world(2556, 69, 27), EAST); break;
+            case FourDirection.Left: agent.teleport(world(2557, 69, 28), NORTH); break;
+            case FourDirection.Forward: agent.teleport(world(2557, 69, 26), SOUTH); break;
         }
-        agent.teleport(world(2558, 69, 27), compassDirection);
+        
 
         for (let i = 0; i < 12; i++) {
             let clonePosition
