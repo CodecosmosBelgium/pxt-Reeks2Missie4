@@ -30,9 +30,9 @@ namespace CodeCosmos {
     export function moveBlock(direction: FourDirection) {
         switch(direction) {
             case FourDirection.Forward: agent.teleport(world(2557, 69, 28), NORTH); break;
-            case FourDirection.Back: agent.teleport(world(2556, 69, 27), EAST); break;
+            case FourDirection.Back: agent.teleport(world(2557, 69, 26), SOUTH); break;
             case FourDirection.Left: agent.teleport(world(2558, 69, 27), WEST); break;
-            case FourDirection.Forward: agent.teleport(world(2557, 69, 26), SOUTH); break;
+            case FourDirection.Forward: agent.teleport(world(2556, 69, 27), EAST); break;
         }
         
 
@@ -41,9 +41,9 @@ namespace CodeCosmos {
             let destionation
             switch (direction) {
                 case FourDirection.Forward: clonePosition = world(2557, 69, 27 - i); destionation = world(2557, 69, 27 - i - 1); break;
-                case FourDirection.Back: clonePosition = world(2557 + i, 69, 27); destionation = world(2557 + i + 1, 69, 27); break;
+                case FourDirection.Back: clonePosition = world(2557, 69, 27 + i); destionation = world(2557, 69, 27 + i + 1); break;
                 case FourDirection.Left: clonePosition = world(2557 - i, 69, 27); destionation = world(2557 - i - 1, 69, 27); break;
-                case FourDirection.Right: clonePosition = world(2557, 69, 27 + i); destionation = world(2557, 69, 27 + i + 1); break;
+                case FourDirection.Right: clonePosition = world(2557 + i, 69, 27); destionation = world(2557 + i + 1, 69, 27); break;
             }
             blocks.clone(
                 clonePosition,
