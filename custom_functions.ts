@@ -2,22 +2,22 @@
 namespace CodeCosmos {
     //% block="nieuwe blok" weight=100 
     export function dropBlock() {
-        randomBlock = randint(0, 1) ? Plastic.blue : Plastic.red;
-        blocks.place(randomBlock === Plastic.red ? DIAMOND_BLOCK : GOLD_BLOCK, world(2557, 75, 27))
+        randomBlock = randint(0, 1) ? Plastic.blue : Plastic.pink;
+        blocks.place(randomBlock === Plastic.pink ? DIAMOND_BLOCK : GOLD_BLOCK, world(2557, 75, 27))
         player.execute(
             "/function drop_block"
         )
         loops.pause(2000)
     }
 
-    //% block="nieuwe blok 2" weight=100 
+    //% block="nieuwe blok level 2" weight=100 
     export function dropBlockLevel2() {
         let block
         switch (randint(0, 3)) {
             case 0: randomBlock = Plastic.blue; block = GOLD_BLOCK; break;
-            case 1: randomBlock = Plastic.red; block = DIAMOND_BLOCK; break;
+            case 1: randomBlock = Plastic.pink; block = DIAMOND_BLOCK; break;
             case 2: randomBlock = Plastic.green; IRON_BLOCK; break;
-            case 3: randomBlock = Plastic.orange; REDSTONE_BLOCK; break;
+            case 3: randomBlock = Plastic.yellow; REDSTONE_BLOCK; break;
         }
         blocks.place(randomBlock, world(2557, 75, 27))
         player.execute(
@@ -56,6 +56,13 @@ namespace CodeCosmos {
             agent.move(FORWARD, 1)
             loops.pause(250)
         }
+
+        switch(direction) {
+            case FourDirection.Forward: if (randomBlock === Plastic.green) player.execute("/scoreboard players add @a correctBlocks 1"); break;
+            case FourDirection.Left: if (randomBlock === Plastic.blue) player.execute("/scoreboard players add @a correctBlocks 1"); break;
+            case FourDirection.Right: if (randomBlock === Plastic.pink) player.execute("/scoreboard players add @a correctBlocks 1"); break;
+            case FourDirection.Back: if (randomBlock === Plastic.yellow) player.execute("/scoreboard players add @a correctBlocks 1"); break;
+        }
     }
 
     //% block="detecteer $block"
@@ -68,10 +75,10 @@ namespace CodeCosmos {
 enum Plastic {
     //% block="blauwe plastic"
     blue,
-    //% block="rode plastic"
-    red,
+    //% block="roze plastic"
+    pink,
     //% block="groene plastic"
     green,
-    //% block="oranje plastic"
-    orange,
+    //% block="gele plastic"
+    yellow,
 }
