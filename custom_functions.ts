@@ -32,7 +32,7 @@ namespace CodeCosmos {
             case FourDirection.Forward: agent.teleport(world(2557, 69, 28), NORTH); break;
             case FourDirection.Back: agent.teleport(world(2557, 69, 26), SOUTH); break;
             case FourDirection.Left: agent.teleport(world(2558, 69, 27), WEST); break;
-            case FourDirection.Forward: agent.teleport(world(2556, 69, 27), EAST); break;
+            case FourDirection.Right: agent.teleport(world(2556, 69, 27), EAST); break;
         }
         
 
