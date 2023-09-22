@@ -58,10 +58,10 @@ namespace CodeCosmos {
         }
 
         switch(direction) {
-            case FourDirection.Forward: if (randomBlock === Plastic.green) player.execute("/scoreboard players add @a correctBlocks 1"); break;
-            case FourDirection.Left: if (randomBlock === Plastic.blue) player.execute("/scoreboard players add @a correctBlocks 1"); break;
-            case FourDirection.Right: if (randomBlock === Plastic.pink) player.execute("/scoreboard players add @a correctBlocks 1"); break;
-            case FourDirection.Back: if (randomBlock === Plastic.yellow) player.execute("/scoreboard players add @a correctBlocks 1"); break;
+            case FourDirection.Forward: if (randomBlock === Plastic.green) { player.execute("/scoreboard players add @a correctBlocks 1")} else {player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`)}; break;
+            case FourDirection.Left: if (randomBlock === Plastic.blue) {player.execute("/scoreboard players add @a correctBlocks 1")}else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
+            case FourDirection.Right: if (randomBlock === Plastic.pink) {player.execute("/scoreboard players add @a correctBlocks 1")}else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
+            case FourDirection.Back: if (randomBlock === Plastic.yellow) {player.execute("/scoreboard players add @a correctBlocks 1")}else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
         }
     }
 
