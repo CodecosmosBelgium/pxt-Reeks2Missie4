@@ -1,8 +1,8 @@
 
 > Open this page at [https://maximvansteenkiste.github.io/pxt-reeks2missie4/](https://maximvansteenkiste.github.io/pxt-reeks2missie4/)
-v3
-## Use as Extension
 
+## Use as Extension
+v4
 This repository can be added as an **extension** in MakeCode.
 
 * open [https://minecraft.makecode.com/](https://minecraft.makecode.com/)
