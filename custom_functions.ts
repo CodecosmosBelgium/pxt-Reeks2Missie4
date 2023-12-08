@@ -1,25 +1,37 @@
-//% color=190 weight=100 block="CodeCosmos"
+enum Plastic {
+    //% block="Blue plastic"
+    Blue,
+    //% block="Pink plastic"
+    Pink,
+    //% block="Green plastic"
+    Green,
+    //% block="Yellow plastic"
+    Yellow
+}
+
+
+//% color=190 weight=100 icon="\uf20a" block="CodeCosmos"
 namespace CodeCosmos {
-    //% block="nieuwe blok" weight=100 
-    export function dropBlock() {
-        randomBlock = randint(0, 1) ? Plastic.blue : Plastic.pink;
-        blocks.place(randomBlock === Plastic.pink ? DIAMOND_BLOCK : GOLD_BLOCK, world(2557, 75, 27))
+    //% block="drop plastic" weight=100 
+    export function dropBlock_Level1() {
+        randomBlock = randint(0, 1) ? Plastic.Blue : Plastic.Pink;
+        blocks.place(randomBlock === Plastic.Pink ? DIAMOND_BLOCK : GOLD_BLOCK, world(2557, 75, 27))
         player.execute(
             "/function drop_block"
         )
         loops.pause(2000)
     }
 
-    //% block="nieuwe blok level 2" weight=100 
-    export function dropBlockLevel2() {
+    //% block="drop plastic" weight=100
+    export function dropPlastic_Level2() {
         let block
         switch (randint(0, 3)) {
-            case 0: randomBlock = Plastic.blue; block = GOLD_BLOCK; break;
-            case 1: randomBlock = Plastic.pink; block = DIAMOND_BLOCK; break;
-            case 2: randomBlock = Plastic.green; IRON_BLOCK; break;
-            case 3: randomBlock = Plastic.yellow; REDSTONE_BLOCK; break;
+            case 0: randomBlock = Plastic.Blue; block = GOLD_BLOCK; break;
+            case 1: randomBlock = Plastic.Pink; block = DIAMOND_BLOCK; break;
+            case 2: randomBlock = Plastic.Green; block = IRON_BLOCK; break;
+            case 3: randomBlock = Plastic.Yellow; block = REDSTONE_BLOCK; break;
         }
-        blocks.place(randomBlock, world(2557, 75, 27))
+        blocks.place(block, world(2557, 75, 27))
         player.execute(
             "/function drop_block"
         )
@@ -35,7 +47,6 @@ namespace CodeCosmos {
             case FourDirection.Right: agent.teleport(world(2556, 69, 27), EAST); break;
         }
         
-
         for (let i = 0; i < 12; i++) {
             let clonePosition
             let destionation
@@ -50,35 +61,23 @@ namespace CodeCosmos {
                 clonePosition,
                 destionation,
                 CloneMask.Replace,
-                CloneMode.Normal
+                CloneMode.Move
             )
-            blocks.place(AIR, clonePosition)
             agent.move(FORWARD, 1)
             loops.pause(250)
         }
 
         switch(direction) {
-            case FourDirection.Forward: if (randomBlock === Plastic.green) { player.execute("/scoreboard players add @a correctBlocks 1")} else {player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`)}; break;
-            case FourDirection.Left: if (randomBlock === Plastic.blue) {player.execute("/scoreboard players add @a correctBlocks 1")}else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
-            case FourDirection.Right: if (randomBlock === Plastic.pink) {player.execute("/scoreboard players add @a correctBlocks 1")}else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
-            case FourDirection.Back: if (randomBlock === Plastic.yellow) {player.execute("/scoreboard players add @a correctBlocks 1")}else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
+            case FourDirection.Forward: if (randomBlock === Plastic.Green) { player.execute("/scoreboard players add @a correctBlocks 1")} else {player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`)}; break;
+            case FourDirection.Left: if (randomBlock === Plastic.Blue) {player.execute("/scoreboard players add @a correctBlocks 1")} else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
+            case FourDirection.Right: if (randomBlock === Plastic.Pink) {player.execute("/scoreboard players add @a correctBlocks 1")} else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
+            case FourDirection.Back: if (randomBlock === Plastic.Yellow) {player.execute("/scoreboard players add @a correctBlocks 1")} else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; break;
         }
     }
 
     //% block="detecteer $block"
-    export function detectBlock(block: Plastic = Plastic.blue) {
+    export function detectBlock(block: Plastic = Plastic.Blue) {
         return randomBlock === block;
     }
 
-}
-
-enum Plastic {
-    //% block="blauwe plastic"
-    blue,
-    //% block="roze plastic"
-    pink,
-    //% block="groene plastic"
-    green,
-    //% block="gele plastic"
-    yellow,
 }
