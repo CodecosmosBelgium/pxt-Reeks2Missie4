@@ -10,7 +10,11 @@
         "README.md",
         "main.blocks",
         "main.ts",
-        "custom_functions.ts"
+        "custom_functions.ts",
+        "t_ex1.md",
+        "t_ex2.md",
+        "t_ex3.md",
+        "t_extra.md"
     ],
     "testFiles": [
         "test.ts"
