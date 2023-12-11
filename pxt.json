@@ -14,7 +14,8 @@
         "t_ex1.md",
         "t_ex2.md",
         "t_ex3.md",
-        "t_extra.md"
+        "t_extra.md",
+        "t_no_exercise.md"
     ],
     "testFiles": [
         "test.ts"
