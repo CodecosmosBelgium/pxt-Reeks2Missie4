@@ -33,7 +33,7 @@ namespace CodeCosmos {
     }
 
     //% block="drop plastic" weight=100
-    export function dropPlastic_Level3() {
+    export function dropBlock_Level3() {
         let block
         switch (randint(0, 3)) {
             case 0: randomBlock = Plastic.blue; block = GOLD_BLOCK; break;
