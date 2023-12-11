@@ -1,19 +1,19 @@
 enum Plastic {
-    //% block="Blue plastic"
-    blue,
-    //% block="Pink plastic"
-    pink,
-    //% block="Green plastic"
-    green,
-    //% block="Yellow plastic"
-    yellow
+    //% block="blue plastic"
+    Blue,
+    //% block="pink plastic"
+    Pink,
+    //% block="green plastic"
+    Green,
+    //% block="yellow plastic"
+    Yellow
 }
 
 //% color=190 weight=100 icon="\uf20a" block="CodeCosmos"
 namespace CodeCosmos {
     //% block="drop plastic" weight=100 
     export function dropBlock_Level1() {
-        randomBlock = Plastic.blue
+        randomBlock = Plastic.Blue
         blocks.place(GOLD_BLOCK, world(2557, 75, 27))
         player.execute(
             "/function drop_block"
@@ -23,8 +23,8 @@ namespace CodeCosmos {
     
     //% block="drop plastic" weight=100
     export function dropBlock_Level2() {
-        randomBlock = randint(0, 1) ? Plastic.blue : Plastic.pink;
-        blocks.place(randomBlock === Plastic.pink ? DIAMOND_BLOCK : GOLD_BLOCK, world(2557, 75, 27))
+        randomBlock = randint(0, 1) ? Plastic.Blue : Plastic.Pink;
+        blocks.place(randomBlock === Plastic.Pink ? DIAMOND_BLOCK : GOLD_BLOCK, world(2557, 75, 27))
         player.execute(
             "/function drop_block"
         )
@@ -35,10 +35,10 @@ namespace CodeCosmos {
     export function dropBlock_Level3() {
         let block
         switch (randint(0, 3)) {
-            case 0: randomBlock = Plastic.blue; block = GOLD_BLOCK; break;
-            case 1: randomBlock = Plastic.pink; block = DIAMOND_BLOCK; break;
-            case 2: randomBlock = Plastic.green; block = IRON_BLOCK; break;
-            case 3: randomBlock = Plastic.yellow; block = REDSTONE_BLOCK; break;
+            case 0: randomBlock = Plastic.Blue; block = GOLD_BLOCK; break;
+            case 1: randomBlock = Plastic.Pink; block = DIAMOND_BLOCK; break;
+            case 2: randomBlock = Plastic.Green; block = IRON_BLOCK; break;
+            case 3: randomBlock = Plastic.Yellow; block = REDSTONE_BLOCK; break;
         }
         blocks.place(block, world(2557, 75, 27))
         player.execute(
@@ -51,10 +51,10 @@ namespace CodeCosmos {
     export function dropBlock_extraLevel() {
         let block
         switch (randint(0, 3)) {
-            case 0: randomBlock = Plastic.blue; block = GOLD_BLOCK; break;
-            case 1: randomBlock = Plastic.pink; block = DIAMOND_BLOCK; break;
-            case 2: randomBlock = Plastic.green; block = IRON_BLOCK; break;
-            case 3: randomBlock = Plastic.yellow; block = REDSTONE_BLOCK; break;
+            case 0: randomBlock = Plastic.Blue; block = GOLD_BLOCK; break;
+            case 1: randomBlock = Plastic.Pink; block = DIAMOND_BLOCK; break;
+            case 2: randomBlock = Plastic.Green; block = IRON_BLOCK; break;
+            case 3: randomBlock = Plastic.Yellow; block = REDSTONE_BLOCK; break;
         }
         blocks.place(block, world(2557, 75, 27))
         player.execute(
@@ -93,16 +93,16 @@ namespace CodeCosmos {
         }
 
         switch (direction) {
-            case FourDirection.Forward: if (randomBlock === Plastic.green) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2557, 69, 28), NORTH); break;
-            case FourDirection.Left: if (randomBlock === Plastic.blue) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2557, 69, 26), SOUTH); break;
-            case FourDirection.Right: if (randomBlock === Plastic.pink) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2558, 69, 27), WEST); break;
-            case FourDirection.Back: if (randomBlock === Plastic.yellow) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2556, 69, 27), EAST); break;
+            case FourDirection.Forward: if (randomBlock === Plastic.Green) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2557, 69, 28), NORTH); break;
+            case FourDirection.Left: if (randomBlock === Plastic.Blue) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2557, 69, 26), SOUTH); break;
+            case FourDirection.Right: if (randomBlock === Plastic.Pink) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2558, 69, 27), WEST); break;
+            case FourDirection.Back: if (randomBlock === Plastic.Yellow) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2556, 69, 27), EAST); break;
         }
 
     }
 
     //% block="detecteer $block"
-    export function detectBlock(block: Plastic = Plastic.blue) {
+    export function detectBlock(block: Plastic = Plastic.Blue) {
         return randomBlock === block;
     }
 }
