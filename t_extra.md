@@ -4,9 +4,11 @@
 
 ```blocks
 player.onChat("extra", function () {
-    if (CodeCosmos.detectBlock()) {
-        CodeCosmos.dropBlock_extraLevel()
-        CodeCosmos.moveBlock(FourDirection.Forward)
+    for (let i = 0; i < 5; i++) {
+        if (CodeCosmos.detectBlock()) {
+            CodeCosmos.dropBlock_extraLevel()
+            CodeCosmos.moveBlock(FourDirection.Forward)
+        }
     }
 }
 ```
