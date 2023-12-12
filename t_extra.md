@@ -5,9 +5,9 @@
 ```blocks
 player.onChat("extra", function () {
     for (let i = 0; i < 5; i++) {
-        if (CodeCosmos.detectBlock()) {
-            CodeCosmos.dropBlock_extraLevel()
-            CodeCosmos.moveBlock(FourDirection.Forward)
+        if (CodeCosmos.detectBlock_Extra()) {
+            CodeCosmos.dropBlock_Extra()
+            CodeCosmos.moveBlock_Extra(FiveDirection.Forward)
         }
     }
 }
