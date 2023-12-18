@@ -7,7 +7,7 @@ player.onChat("extra", function () {
     for (let i = 0; i < 5; i++) {
         if (CodeCosmos.detectBlock_Extra()) {
             CodeCosmos.dropBlock_Extra()
-            CodeCosmos.moveBlock_Extra(FiveDirection.Forward)
+            CodeCosmos.moveBlock_WithOne()
         }
     }
 }
