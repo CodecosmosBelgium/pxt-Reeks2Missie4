@@ -28,9 +28,7 @@ namespace CodeCosmos {
     export function dropBlock_Level1() {
         randomBlock = Plastic.Blue
         blocks.place(GOLD_BLOCK, world(2557, 75, 27))
-        player.execute(
-            "/function drop_block"
-        )
+        player.execute("/function drop_block")
         loops.pause(2000)
     }
 
@@ -38,9 +36,7 @@ namespace CodeCosmos {
     export function dropBlock_Level2() {
         randomBlock = randint(0, 1) ? Plastic.Blue : Plastic.Pink;
         blocks.place(randomBlock === Plastic.Pink ? DIAMOND_BLOCK : GOLD_BLOCK, world(2557, 75, 27))
-        player.execute(
-            "/function drop_block"
-        )
+        player.execute("/function drop_block")
         loops.pause(2000)
     }
 
@@ -54,9 +50,7 @@ namespace CodeCosmos {
             case 3: randomBlock = Plastic.Yellow; block = REDSTONE_BLOCK; break;
         }
         blocks.place(block, world(2557, 75, 27))
-        player.execute(
-            "/function drop_block"
-        )
+        player.execute("/function drop_block")
         loops.pause(2000)
     }
 
@@ -72,9 +66,7 @@ namespace CodeCosmos {
             case 4: randomBlock_Extra = Plastic_Extra.Fish_Block; block = LAPIS_LAZULI_BLOCK; break;
         }
         blocks.place(block, world(2557, 75, 27))
-        player.execute(
-            "/function drop_block"
-        )
+        player.execute("/function drop_block")
         loops.pause(2000)
     }
 
@@ -105,6 +97,7 @@ namespace CodeCosmos {
             )
             agent.move(FORWARD, 1)
             loops.pause(250)
+            player.execute(`scoreboard players set @a level_timer 0`)
         }
 
         switch (direction) {
@@ -197,6 +190,7 @@ namespace CodeCosmos {
         player.execute("/execute as @s at @v run clone ^^^1 ^^^1 ^^^2 replace move")
         player.execute("/execute as @s at @v run tp @v ^^^1")
         fishBlockMoves++
+        player.execute(`scoreboard players set @a level_timer 0`)
 
         if (fishBlockMoves == 20 && blocks.testForBlock(LAPIS_LAZULI_BLOCK, world(2547, 69, 17))) {
             player.execute("/scoreboard players add @a correctBlocks 1")
