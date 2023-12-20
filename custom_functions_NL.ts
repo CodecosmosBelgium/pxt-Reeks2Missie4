@@ -195,6 +195,8 @@ namespace CodeCosmos_NL {
 
         if (fishBlockMoves == 20 && blocks.testForBlock(LAPIS_LAZULI_BLOCK, world(2547, 69, 17))) {
             player.execute("/scoreboard players add @a correctBlocks 1")
+            player.execute("/summon tropicalfish 2547 70 15")
+            player.execute("/setblock 2547 69 17 air")
             player.execute("/execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~")
             agent.teleport(world(2557, 69, 28), NORTH);
         } else if (fishBlockMoves == 20 && !blocks.testForBlock(LAPIS_LAZULI_BLOCK, world(2547, 69, 17))) {
