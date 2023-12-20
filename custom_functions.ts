@@ -126,69 +126,68 @@ namespace CodeCosmos {
             switch (direction) {
                 case FourDirection.Forward: 
                     if (lastDirection == FourDirection.Back) {
-                        player.execute("/execute at @v run tp @v ^^^2")
+                        player.execute("/function levels/extra/agent_forward_b")
                     }
                     if (lastDirection == FourDirection.Left) {
-                        player.execute("/execute at @v run tp @v ~-1 ~ ~1")
+                        player.execute("/function levels/extra/agent_forward_l")
                     }
                     if (lastDirection == FourDirection.Right) {
-                        player.execute("/execute at @v run tp @v ~1 ~ ~1")
+                        player.execute("/function levels/extra/agent_forward_r")
                     }
                     
-                    player.execute("/execute at @v run tp @v ~ ~ ~ facing ~ ~ ~-1");
+                    player.execute("/function levels/extra/agent_forward");
                     lastDirection = FourDirection.Forward
                     break;
 
                 case FourDirection.Back: 
                     if (lastDirection == FourDirection.Forward) {
-                        player.execute("/execute at @v run tp @v ^^^2")
+                        player.execute("/function levels/extra/agent_back_f")
                     }
                     if (lastDirection == FourDirection.Left) {
-                        player.execute("/execute at @v run tp @v ~-1 ~ ~-1")
+                        player.execute("/function levels/extra/agent_back_l")
                     }
                     if (lastDirection == FourDirection.Right) {
-                        player.execute("/execute at @v run tp @v ~1 ~ ~-1")
+                        player.execute("/function levels/extra/agent_back_r")
                     }
 
-                    player.execute("/execute at @v run tp @v ~ ~ ~ facing ~ ~ ~1");
+                    player.execute("/function levels/extra/agent_back");
                     lastDirection = FourDirection.Back
                     break;
 
                 case FourDirection.Left: 
                     if (lastDirection == FourDirection.Forward) {
-                        player.execute("/execute at @v run tp @v ~1 ~ ~-1")
+                        player.execute("/function levels/extra/agent_left_f")
                     }
                     if (lastDirection == FourDirection.Back) {
-                        player.execute("/execute at @v run tp @v ~1 ~ ~1")
+                        player.execute("/function levels/extra/agent_left_b")
                     }
                     if (lastDirection == FourDirection.Right) {
-                        player.execute("/execute at @v run tp @v ^^^2")
+                        player.execute("/function levels/extra/agent_left_r")
                     }
 
-                    player.execute("/execute at @v run tp @v ~ ~ ~ facing ~-1 ~ ~");
+                    player.execute("/function levels/extra/agent_left");
                     lastDirection = FourDirection.Left
                     break;
 
                 case FourDirection.Right: 
                     if (lastDirection == FourDirection.Forward) {
-                        player.execute("/execute at @v run tp @v ~-1 ~ ~-1")
+                        player.execute("/function levels/extra/agent_right_f")
                     }
                     if (lastDirection == FourDirection.Back) {
-                        player.execute("/execute at @v run tp @v ~-1 ~ ~1")
+                        player.execute("/function levels/extra/agent_right_b")
                     }
                     if (lastDirection == FourDirection.Left) {
-                        player.execute("/execute at @v run tp @v ^^^2")
+                        player.execute("/function levels/extra/agent_right_l")
                     }
                     
-                    player.execute("/execute at @v run tp @v ~ ~ ~ facing ~1 ~ ~");
+                    player.execute("/function levels/extra/agent_right");
                     lastDirection = FourDirection.Right
                     break;
 
             }
         }
         
-        player.execute("/execute at @v run clone ^^^1 ^^^1 ^^^2 replace move")
-        player.execute("/execute at @v run tp @v ^^^1")
+        player.execute("/function levels/extra/agent_clone_and_move")
         fishBlockMoves++
         player.execute(`scoreboard players set @a level_timer 0`)
 
