@@ -4,11 +4,9 @@
 
 ```blocks
 player.onChat("level1", function () {
-    for (let i = 0; i < 5; i++) {
-        if (CodeCosmos_NL.detectBlock()) {
-            CodeCosmos_NL.dropBlock_Level1()
-            CodeCosmos_NL.moveBlock(FourDirection.Forward)
-        }
+    if (CodeCosmos_NL.detectBlock()) {
+        CodeCosmos_NL.dropBlock_Level1()
+        CodeCosmos_NL.moveBlock(FourDirection.Forward)
     }
 }
 ```
