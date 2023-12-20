@@ -96,7 +96,7 @@ namespace CodeCosmos_NL {
                 CloneMode.Move
             )
             agent.move(FORWARD, 1)
-            loops.pause(50)
+            loops.pause(150)
             player.execute(`scoreboard players set @a level_timer 0`)
         }
 
@@ -191,7 +191,7 @@ namespace CodeCosmos_NL {
         fishBlockMoves++
         player.execute(`scoreboard players set @a level_timer 0`)
 
-        loops.pause(50)
+        loops.pause(150)
 
         if (fishBlockMoves == 20 && blocks.testForBlock(LAPIS_LAZULI_BLOCK, world(2547, 69, 17))) {
             player.execute("/scoreboard players add @a correctBlocks 1")
