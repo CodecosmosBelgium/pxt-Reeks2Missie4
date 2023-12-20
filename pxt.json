@@ -14,7 +14,13 @@
         "t_ex2.md",
         "t_ex3.md",
         "t_extra.md",
-        "t_no_exercise.md"
+        "t_no_exercise.md",
+        "custom_functions_NL.ts",
+        "_locales/nl/t_ex1.md",
+        "_locales/nl/t_ex2.md",
+        "_locales/nl/t_ex3.md",
+        "_locales/nl/t_extra.md",
+        "_locales/nl/t_no_exercise.md"
     ],
     "testFiles": [
         "test.ts"
