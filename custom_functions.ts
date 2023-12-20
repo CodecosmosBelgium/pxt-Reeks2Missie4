@@ -3,10 +3,10 @@ enum Plastic {
     Blue,
     //% block="pink plastic"
     Pink,
-    //% block="yellow plastic"
-    Yellow,
     //% block="green plastic"
-    Green
+    Green,
+    //% block="yellow plastic"
+    Yellow
 }
 
 enum Plastic_Extra {
@@ -14,10 +14,10 @@ enum Plastic_Extra {
     Blue,
     //% block="pink plastic"
     Pink,
-    //% block="yellow plastic"
-    Yellow,
     //% block="green plastic"
     Green,
+    //% block="yellow plastic"
+    Yellow,
     //% block="frozen fish"
     Fish_Block
 }
