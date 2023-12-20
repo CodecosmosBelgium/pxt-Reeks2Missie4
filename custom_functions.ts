@@ -101,10 +101,10 @@ namespace CodeCosmos {
         }
 
         switch (direction) {
-            case FourDirection.Forward: if (randomBlock === Plastic.Green) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2557, 69, 28), NORTH); break;
-            case FourDirection.Back: if (randomBlock === Plastic.Yellow) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2557, 69, 26), SOUTH); break;
-            case FourDirection.Left: if (randomBlock === Plastic.Blue) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2558, 69, 27), WEST); break;
-            case FourDirection.Right: if (randomBlock === Plastic.Pink) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2556, 69, 27), EAST); break;
+            case FourDirection.Forward: if (randomBlock === Plastic.Green || randomBlock_Extra === Plastic_Extra.Green) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2557, 69, 28), NORTH); break;
+            case FourDirection.Back: if (randomBlock === Plastic.Yellow || randomBlock_Extra === Plastic_Extra.Yellow) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2557, 69, 26), SOUTH); break;
+            case FourDirection.Left: if (randomBlock === Plastic.Blue || randomBlock_Extra === Plastic_Extra.Blue) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2558, 69, 27), WEST); break;
+            case FourDirection.Right: if (randomBlock === Plastic.Pink || randomBlock_Extra === Plastic_Extra.Pink) { player.execute("/scoreboard players add @a correctBlocks 1"); player.execute(`execute @c ~ ~ ~ particle rwm:checkmark ~ ~1 ~`); } else { player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`) }; agent.teleport(world(2556, 69, 27), EAST); break;
         }
     }
 
@@ -126,69 +126,69 @@ namespace CodeCosmos {
             switch (direction) {
                 case FourDirection.Forward: 
                     if (lastDirection == FourDirection.Back) {
-                        player.execute("/execute as @s at @v run tp @v ^^^2")
+                        player.execute("/execute at @v run tp @v ^^^2")
                     }
                     if (lastDirection == FourDirection.Left) {
-                        player.execute("/execute as @s at @v run tp @v ~-1 ~ ~1")
+                        player.execute("/execute at @v run tp @v ~-1 ~ ~1")
                     }
                     if (lastDirection == FourDirection.Right) {
-                        player.execute("/execute as @s at @v run tp @v ~1 ~ ~1")
+                        player.execute("/execute at @v run tp @v ~1 ~ ~1")
                     }
                     
-                    player.execute("/execute as @s at @v run tp @v ~ ~ ~ facing ~ ~ ~-1");
+                    player.execute("/execute at @v run tp @v ~ ~ ~ facing ~ ~ ~-1");
                     lastDirection = FourDirection.Forward
                     break;
 
                 case FourDirection.Back: 
                     if (lastDirection == FourDirection.Forward) {
-                        player.execute("/execute as @s at @v run tp @v ^^^2")
+                        player.execute("/execute at @v run tp @v ^^^2")
                     }
                     if (lastDirection == FourDirection.Left) {
-                        player.execute("/execute as @s at @v run tp @v ~-1 ~ ~-1")
+                        player.execute("/execute at @v run tp @v ~-1 ~ ~-1")
                     }
                     if (lastDirection == FourDirection.Right) {
-                        player.execute("/execute as @s at @v run tp @v ~1 ~ ~-1")
+                        player.execute("/execute at @v run tp @v ~1 ~ ~-1")
                     }
 
-                    player.execute("/execute as @s at @v run tp @v ~ ~ ~ facing ~ ~ ~1");
+                    player.execute("/execute at @v run tp @v ~ ~ ~ facing ~ ~ ~1");
                     lastDirection = FourDirection.Back
                     break;
 
                 case FourDirection.Left: 
                     if (lastDirection == FourDirection.Forward) {
-                        player.execute("/execute as @s at @v run tp @v ~1 ~ ~-1")
+                        player.execute("/execute at @v run tp @v ~1 ~ ~-1")
                     }
                     if (lastDirection == FourDirection.Back) {
-                        player.execute("/execute as @s at @v run tp @v ~1 ~ ~1")
+                        player.execute("/execute at @v run tp @v ~1 ~ ~1")
                     }
                     if (lastDirection == FourDirection.Right) {
-                        player.execute("/execute as @s at @v run tp @v ^^^2")
+                        player.execute("/execute at @v run tp @v ^^^2")
                     }
 
-                    player.execute("/execute as @s at @v run tp @v ~ ~ ~ facing ~-1 ~ ~");
+                    player.execute("/execute at @v run tp @v ~ ~ ~ facing ~-1 ~ ~");
                     lastDirection = FourDirection.Left
                     break;
 
                 case FourDirection.Right: 
                     if (lastDirection == FourDirection.Forward) {
-                        player.execute("/execute as @s at @v run tp @v ~-1 ~ ~-1")
+                        player.execute("/execute at @v run tp @v ~-1 ~ ~-1")
                     }
                     if (lastDirection == FourDirection.Back) {
-                        player.execute("/execute as @s at @v run tp @v ~-1 ~ ~1")
+                        player.execute("/execute at @v run tp @v ~-1 ~ ~1")
                     }
                     if (lastDirection == FourDirection.Left) {
-                        player.execute("/execute as @s at @v run tp @v ^^^2")
+                        player.execute("/execute at @v run tp @v ^^^2")
                     }
                     
-                    player.execute("/execute as @s at @v run tp @v ~ ~ ~ facing ~1 ~ ~");
+                    player.execute("/execute at @v run tp @v ~ ~ ~ facing ~1 ~ ~");
                     lastDirection = FourDirection.Right
                     break;
 
             }
         }
         
-        player.execute("/execute as @s at @v run clone ^^^1 ^^^1 ^^^2 replace move")
-        player.execute("/execute as @s at @v run tp @v ^^^1")
+        player.execute("/execute at @v run clone ^^^1 ^^^1 ^^^2 replace move")
+        player.execute("/execute at @v run tp @v ^^^1")
         fishBlockMoves++
         player.execute(`scoreboard players set @a level_timer 0`)
 
